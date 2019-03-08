@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DataModelStoreContainer" CdmEntityContainer="DataModelContainer">
+    <EntitySetMapping Name="FörsäkringSet">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.Försäkring)">
+        <MappingFragment StoreEntitySet="FörsäkringSet">
+          <ScalarProperty Name="försäkringsId" ColumnName="försäkringsId" />
+          <ScalarProperty Name="försäkringsNr" ColumnName="försäkringsNr" />
+          <ScalarProperty Name="betald" ColumnName="betald" />
+          <ScalarProperty Name="provisionsbelopp" ColumnName="provisionsbelopp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PersonalSet">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.Personal)">
+        <MappingFragment StoreEntitySet="PersonalSet">
+          <ScalarProperty Name="anställningsId" ColumnName="anställningsId" />
+          <ScalarProperty Name="persNr" ColumnName="persNr" />
+          <ScalarProperty Name="agenturNr" ColumnName="agenturNr" />
+          <ScalarProperty Name="skattesats" ColumnName="skattesats" />
+          <ScalarProperty Name="fNamn" ColumnName="fNamn" />
+          <ScalarProperty Name="eNamn" ColumnName="eNamn" />
+          <ScalarProperty Name="gatuAdress" ColumnName="gatuAdress" />
+          <ScalarProperty Name="ort" ColumnName="ort" />
+          <ScalarProperty Name="postNr" ColumnName="postNr" />
+          <ScalarProperty Name="tel1" ColumnName="tel1" />
+          <ScalarProperty Name="tel2" ColumnName="tel2" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="lösenord" ColumnName="lösenord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FöretagsansökanSet">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.Företagsansökan)">
+        <MappingFragment StoreEntitySet="FöretagsansökanSet">
+          <ScalarProperty Name="företagsAnsökningsId" ColumnName="företagsAnsökningsId" />
+          <ScalarProperty Name="försäkringsbolag" ColumnName="försäkringsbolag" />
+          <ScalarProperty Name="begynnelsedatum" ColumnName="begynnelsedatum" />
+          <ScalarProperty Name="förfallodag" ColumnName="förfallodag" />
+          <ScalarProperty Name="betalningsform" ColumnName="betalningsform" />
+          <ScalarProperty Name="premie" ColumnName="premie" />
+          <ScalarProperty Name="Anteckning" ColumnName="Anteckning" />
+          <ScalarProperty Name="försäkringsTyp" ColumnName="försäkringsTyp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PrivatansökanSet">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.Privatansökan)">
+        <MappingFragment StoreEntitySet="PrivatansökanSet">
+          <ScalarProperty Name="privatAnsökningsId" ColumnName="privatAnsökningsId" />
+          <ScalarProperty Name="privatFörsäkradPersNr" ColumnName="privatFörsäkradPersNr" />
+          <ScalarProperty Name="privatFörsäkradENamn" ColumnName="privatFörsäkradENamn" />
+          <ScalarProperty Name="privatFörsäkradFNamn" ColumnName="privatFörsäkradFNamn" />
+          <ScalarProperty Name="ankomstdatum" ColumnName="ankomstdatum" />
+          <ScalarProperty Name="betalningsform" ColumnName="betalningsform" />
+          <ScalarProperty Name="vuxen" ColumnName="vuxen" />
+          <ScalarProperty Name="premie" ColumnName="premie" />
+          <ScalarProperty Name="paGatuadress" ColumnName="paGatuadress" />
+          <ScalarProperty Name="paOrt" ColumnName="paOrt" />
+          <ScalarProperty Name="paPostnr" ColumnName="paPostnr" />
+          <ScalarProperty Name="tillvalsNamn" ColumnName="tillvalsNamn" />
+          <ScalarProperty Name="grundBelopp" ColumnName="grundBelopp" />
+          <ScalarProperty Name="tvGrundbelopp" ColumnName="tvGrundbelopp" />
+          <ScalarProperty Name="försäkringsbolag" ColumnName="försäkringsbolag" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FörsäkringstagarePrivatSet">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.FörsäkringstagarePrivat)">
+        <MappingFragment StoreEntitySet="FörsäkringstagarePrivatSet">
+          <ScalarProperty Name="försäkringstagarePrivatId" ColumnName="försäkringstagarePrivatId" />
+          <ScalarProperty Name="fNamn" ColumnName="fNamn" />
+          <ScalarProperty Name="eNamn" ColumnName="eNamn" />
+          <ScalarProperty Name="gatuAdress" ColumnName="gatuAdress" />
+          <ScalarProperty Name="ort" ColumnName="ort" />
+          <ScalarProperty Name="postNr" ColumnName="postNr" />
+          <ScalarProperty Name="tel1" ColumnName="tel1" />
+          <ScalarProperty Name="tel2" ColumnName="tel2" />
+          <ScalarProperty Name="email1" ColumnName="email1" />
+          <ScalarProperty Name="email2" ColumnName="email2" />
+          <ScalarProperty Name="prospekt" ColumnName="prospekt" />
+          <ScalarProperty Name="persNr" ColumnName="persNr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FörsäkringstagareFöretagSet">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.FörsäkringstagareFöretag)">
+        <MappingFragment StoreEntitySet="FörsäkringstagareFöretagSet">
+          <ScalarProperty Name="försäkringstagareFöretagId" ColumnName="försäkringstagareFöretagId" />
+          <ScalarProperty Name="företagsNamn" ColumnName="företagsNamn" />
+          <ScalarProperty Name="kFNamn" ColumnName="kFNamn" />
+          <ScalarProperty Name="kENamn" ColumnName="kENamn" />
+          <ScalarProperty Name="ort" ColumnName="ort" />
+          <ScalarProperty Name="postNr" ColumnName="postNr" />
+          <ScalarProperty Name="tel1" ColumnName="tel1" />
+          <ScalarProperty Name="faxNr" ColumnName="faxNr" />
+          <ScalarProperty Name="email1" ColumnName="email1" />
+          <ScalarProperty Name="gatuAdress" ColumnName="gatuAdress" />
+          <ScalarProperty Name="orgNr" ColumnName="orgNr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RollSet">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.Roll)">
+        <MappingFragment StoreEntitySet="RollSet">
+          <ScalarProperty Name="rollId" ColumnName="rollId" />
+          <ScalarProperty Name="rollNamn" ColumnName="rollNamn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BehörighetSet">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.Behörighet)">
+        <MappingFragment StoreEntitySet="BehörighetSet">
+          <ScalarProperty Name="behörighetsId" ColumnName="behörighetsId" />
+          <ScalarProperty Name="behörighetsTyp" ColumnName="behörighetsTyp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TillvalSet">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.Tillval)">
+        <MappingFragment StoreEntitySet="TillvalSet">
+          <ScalarProperty Name="tillvalsId" ColumnName="tillvalsId" />
+          <ScalarProperty Name="datum" ColumnName="datum" />
+          <ScalarProperty Name="ackVärdeVariabel" ColumnName="ackVärdeVariabel" />
+          <ScalarProperty Name="tillvalsNamn" ColumnName="tillvalsNamn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TillvalGrundbeloppSet">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.TillvalGrundbelopp)">
+        <MappingFragment StoreEntitySet="TillvalGrundbeloppSet">
+          <ScalarProperty Name="tvGrundbeloppId" ColumnName="tvGrundbeloppId" />
+          <ScalarProperty Name="grundBelopp" ColumnName="grundBelopp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProvisionstabellSet">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.Provisionstabell)">
+        <MappingFragment StoreEntitySet="ProvisionstabellSet">
+          <ScalarProperty Name="provisionstabellsId" ColumnName="provisionstabellsId" />
+          <ScalarProperty Name="totaltMinAckVärde" ColumnName="totaltMinAckVärde" />
+          <ScalarProperty Name="totaltMaxAckVärde" ColumnName="totaltMaxAckVärde" />
+          <ScalarProperty Name="provisionsAndelBarn" ColumnName="provisionsAndelBarn" />
+          <ScalarProperty Name="provionsAndelVuxen" ColumnName="provionsAndelVuxen" />
+          <ScalarProperty Name="period" ColumnName="period" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SemesterersättningSet">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.Semesterersättning)">
+        <MappingFragment StoreEntitySet="SemesterersättningSet">
+          <ScalarProperty Name="semesterersättningsId" ColumnName="semesterersättningsId" />
+          <ScalarProperty Name="år" ColumnName="år" />
+          <ScalarProperty Name="avdrag" ColumnName="avdrag" />
+          <ScalarProperty Name="procentsats" ColumnName="procentsats" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GrundbeloppSet">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.Grundbelopp)">
+        <MappingFragment StoreEntitySet="GrundbeloppSet">
+          <ScalarProperty Name="grundbeloppsId" ColumnName="grundbeloppsId" />
+          <ScalarProperty Name="datum" ColumnName="datum" />
+          <ScalarProperty Name="grundBelopp" ColumnName="grundBelopp" />
+          <ScalarProperty Name="ackVärde" ColumnName="ackVärde" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FörsäkringsTypSet">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.FörsäkringsTyp)">
+        <MappingFragment StoreEntitySet="FörsäkringsTypSet">
+          <ScalarProperty Name="försäkringsTypId" ColumnName="försäkringsTypId" />
+          <ScalarProperty Name="försäkringsTyp" ColumnName="försäkringsTyp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FörsäkringFöretagSet">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.FörsäkringFöretag)">
+        <MappingFragment StoreEntitySet="FörsäkringFöretagSet">
+          <ScalarProperty Name="FöretagsförsäkringsId" ColumnName="FöretagsförsäkringsId" />
+          <ScalarProperty Name="försäkringsNr" ColumnName="försäkringsNr" />
+          <ScalarProperty Name="betald" ColumnName="betald" />
+          <ScalarProperty Name="provisionsbelopp" ColumnName="provisionsbelopp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FörsäkringPrivatansökan" TypeName="DataModel.FörsäkringPrivatansökan" StoreEntitySet="FörsäkringSet">
+      <EndProperty Name="Privatansökan">
+        <ScalarProperty Name="privatAnsökningsId" ColumnName="Privatansökan_privatAnsökningsId" />
+      </EndProperty>
+      <EndProperty Name="Försäkring">
+        <ScalarProperty Name="försäkringsId" ColumnName="försäkringsId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FöretagsansökanFörsäkringstagareFöretag" TypeName="DataModel.FöretagsansökanFörsäkringstagareFöretag" StoreEntitySet="FöretagsansökanSet">
+      <EndProperty Name="FörsäkringstagareFöretag">
+        <ScalarProperty Name="försäkringstagareFöretagId" ColumnName="FörsäkringstagareFöretag_försäkringstagareFöretagId" />
+      </EndProperty>
+      <EndProperty Name="Företagsansökan">
+        <ScalarProperty Name="företagsAnsökningsId" ColumnName="företagsAnsökningsId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PrivatansökanFörsäkringstagarePrivat" TypeName="DataModel.PrivatansökanFörsäkringstagarePrivat" StoreEntitySet="PrivatansökanSet">
+      <EndProperty Name="FörsäkringstagarePrivat">
+        <ScalarProperty Name="försäkringstagarePrivatId" ColumnName="FörsäkringstagarePrivat_försäkringstagarePrivatId" />
+      </EndProperty>
+      <EndProperty Name="Privatansökan">
+        <ScalarProperty Name="privatAnsökningsId" ColumnName="privatAnsökningsId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PrivatansökanPersonal" TypeName="DataModel.PrivatansökanPersonal" StoreEntitySet="PrivatansökanSet">
+      <EndProperty Name="Personal">
+        <ScalarProperty Name="anställningsId" ColumnName="Personal_anställningsId" />
+      </EndProperty>
+      <EndProperty Name="Privatansökan">
+        <ScalarProperty Name="privatAnsökningsId" ColumnName="privatAnsökningsId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FöretagsansökanPersonal" TypeName="DataModel.FöretagsansökanPersonal" StoreEntitySet="FöretagsansökanSet">
+      <EndProperty Name="Personal">
+        <ScalarProperty Name="anställningsId" ColumnName="Personal_anställningsId" />
+      </EndProperty>
+      <EndProperty Name="Företagsansökan">
+        <ScalarProperty Name="företagsAnsökningsId" ColumnName="företagsAnsökningsId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PersonalRoll" TypeName="DataModel.PersonalRoll" StoreEntitySet="PersonalSet">
+      <EndProperty Name="Roll">
+        <ScalarProperty Name="rollId" ColumnName="Roll_rollId" />
+      </EndProperty>
+      <EndProperty Name="Personal">
+        <ScalarProperty Name="anställningsId" ColumnName="anställningsId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="RollBehörighet" TypeName="DataModel.RollBehörighet" StoreEntitySet="RollSet">
+      <EndProperty Name="Behörighet">
+        <ScalarProperty Name="behörighetsId" ColumnName="Behörighet_behörighetsId" />
+      </EndProperty>
+      <EndProperty Name="Roll">
+        <ScalarProperty Name="rollId" ColumnName="rollId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TillvalTillvalGrundbelopp" TypeName="DataModel.TillvalTillvalGrundbelopp" StoreEntitySet="TillvalGrundbeloppSet">
+      <EndProperty Name="Tillval">
+        <ScalarProperty Name="tillvalsId" ColumnName="Tillval_tillvalsId" />
+      </EndProperty>
+      <EndProperty Name="TillvalGrundbelopp">
+        <ScalarProperty Name="tvGrundbeloppId" ColumnName="tvGrundbeloppId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="GrundbeloppFörsäkringsTyp" TypeName="DataModel.GrundbeloppFörsäkringsTyp" StoreEntitySet="GrundbeloppSet">
+      <EndProperty Name="FörsäkringsTyp">
+        <ScalarProperty Name="försäkringsTypId" ColumnName="FörsäkringsTyp_försäkringsTypId" />
+      </EndProperty>
+      <EndProperty Name="Grundbelopp">
+        <ScalarProperty Name="grundbeloppsId" ColumnName="grundbeloppsId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FörsäkringsTypPrivatansökan" TypeName="DataModel.FörsäkringsTypPrivatansökan" StoreEntitySet="PrivatansökanSet">
+      <EndProperty Name="FörsäkringsTyp">
+        <ScalarProperty Name="försäkringsTypId" ColumnName="FörsäkringsTyp_försäkringsTypId" />
+      </EndProperty>
+      <EndProperty Name="Privatansökan">
+        <ScalarProperty Name="privatAnsökningsId" ColumnName="privatAnsökningsId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FörsäkringsTypTillval" TypeName="DataModel.FörsäkringsTypTillval" StoreEntitySet="FörsäkringsTypSet">
+      <EndProperty Name="Tillval">
+        <ScalarProperty Name="tillvalsId" ColumnName="Tillval_tillvalsId" />
+      </EndProperty>
+      <EndProperty Name="FörsäkringsTyp">
+        <ScalarProperty Name="försäkringsTypId" ColumnName="försäkringsTypId" />
+      </EndProperty>
+      <Condition ColumnName="Tillval_tillvalsId" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FöretagsansökanFörsäkringFöretag" TypeName="DataModel.FöretagsansökanFörsäkringFöretag" StoreEntitySet="FörsäkringFöretagSet">
+      <EndProperty Name="Företagsansökan">
+        <ScalarProperty Name="företagsAnsökningsId" ColumnName="Företagsansökan_företagsAnsökningsId" />
+      </EndProperty>
+      <EndProperty Name="FörsäkringFöretag">
+        <ScalarProperty Name="FöretagsförsäkringsId" ColumnName="FöretagsförsäkringsId" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

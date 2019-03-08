@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="193dfd52706d4f82aeb6d7d7880773b7" Name="Diagram1" ZoomLevel="64" >
+        <EntityTypeShape EntityType="DataModel.Försäkring" Width="1.5" PointX="7.75" PointY="13" />
+        <EntityTypeShape EntityType="DataModel.Personal" Width="1.5" PointX="7.75" PointY="3" />
+        <EntityTypeShape EntityType="DataModel.Företagsansökan" Width="1.5" PointX="12.75" PointY="6" />
+        <EntityTypeShape EntityType="DataModel.Privatansökan" Width="1.5" PointX="5.25" PointY="5.375" />
+        <EntityTypeShape EntityType="DataModel.FörsäkringstagarePrivat" Width="1.5" PointX="5.25" PointY="0.625" />
+        <EntityTypeShape EntityType="DataModel.FörsäkringstagareFöretag" Width="1.5" PointX="12.75" PointY="2.125" />
+        <EntityTypeShape EntityType="DataModel.Roll" Width="1.5" PointX="7.75" PointY="0.5" />
+        <EntityTypeShape EntityType="DataModel.Behörighet" Width="1.5" PointX="10.25" PointY="0.5" />
+        <EntityTypeShape EntityType="DataModel.Tillval" Width="1.5" PointX="10.375" PointY="7.375" />
+        <EntityTypeShape EntityType="DataModel.TillvalGrundbelopp" Width="1.5" PointX="10.375" PointY="10.25" />
+        <EntityTypeShape EntityType="DataModel.Provisionstabell" Width="1.5" PointX="2.625" PointY="1.375" />
+        <EntityTypeShape EntityType="DataModel.Semesterersättning" Width="1.5" PointX="2.625" PointY="3.875" />
+        <EntityTypeShape EntityType="DataModel.Grundbelopp" Width="1.5" PointX="7.75" PointY="10" />
+        <AssociationConnector Association="DataModel.FörsäkringPrivatansökan" />
+        <AssociationConnector Association="DataModel.FöretagsansökanFörsäkringstagareFöretag" />
+        <AssociationConnector Association="DataModel.PrivatansökanFörsäkringstagarePrivat" />
+        <AssociationConnector Association="DataModel.PrivatansökanPersonal" />
+        <AssociationConnector Association="DataModel.FöretagsansökanPersonal" />
+        <AssociationConnector Association="DataModel.PersonalRoll" />
+        <AssociationConnector Association="DataModel.RollBehörighet" />
+        <AssociationConnector Association="DataModel.TillvalTillvalGrundbelopp" />
+        <EntityTypeShape EntityType="DataModel.FörsäkringsTyp" Width="1.5" PointX="7.75" PointY="7.375" />
+        <AssociationConnector Association="DataModel.GrundbeloppFörsäkringsTyp" />
+        <AssociationConnector Association="DataModel.FörsäkringsTypPrivatansökan" />
+        <AssociationConnector Association="DataModel.FörsäkringsTypTillval" />
+        <EntityTypeShape EntityType="DataModel.FörsäkringFöretag" Width="1.5" PointX="12.75" PointY="10.125" />
+        <AssociationConnector Association="DataModel.FöretagsansökanFörsäkringFöretag" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

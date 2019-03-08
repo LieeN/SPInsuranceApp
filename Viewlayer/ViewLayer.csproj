@@ -1,0 +1,623 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{49AEAEC6-BDD7-450B-A8D9-F29A614CBCA4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Viewlayer</RootNamespace>
+    <AssemblyName>Viewlayer</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataSourceBehörighet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSourceBehörighet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DatasourceProvision.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatasourceProvision.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FöretagsansökningFörsäkringstagareTabell.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FöretagsansökningFörsäkringstagareTabell.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="försäkringsTypTabell.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>försäkringsTypTabell.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="försäkringsTypTabellSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>försäkringsTypTabellSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="grundbeloppTabell.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>grundbeloppTabell.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="rollTabell.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rollTabell.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="suht1807DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>suht1807DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="tillValsBeloppTabell.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>tillValsBeloppTabell.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="tillvalsTypTabell.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>tillvalsTypTabell.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Views\0.0 Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\0.0 Login.Designer.cs">
+      <DependentUpon>0.0 Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\0.1 HuvudMeny.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\0.1 HuvudMeny.Designer.cs">
+      <DependentUpon>0.1 HuvudMeny.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\0.2.1 PrivatRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\0.2.1 PrivatRegister.Designer.cs">
+      <DependentUpon>0.2.1 PrivatRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\0.2 FöretagRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\0.2 FöretagRegister.Designer.cs">
+      <DependentUpon>0.2 FöretagRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\0.3.1.2 SkapaNyAnsökanFöretag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\0.3.1.2 SkapaNyAnsökanFöretag.Designer.cs">
+      <DependentUpon>0.3.1.2 SkapaNyAnsökanFöretag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\0.3.1.1 SkapaNyAnsökanPrivat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\0.3.1.1 SkapaNyAnsökanPrivat.Designer.cs">
+      <DependentUpon>0.3.1.1 SkapaNyAnsökanPrivat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\0.3.2.2 AnsökningarVisaFöretag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\0.3.2.2 AnsökningarVisaFöretag.Designer.cs">
+      <DependentUpon>0.3.2.2 AnsökningarVisaFöretag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\0.3.2.1 AnsökningarVisaPrivat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\0.3.2.1 AnsökningarVisaPrivat.Designer.cs">
+      <DependentUpon>0.3.2.1 AnsökningarVisaPrivat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\0.5.1 FörsäkringstypTillval.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\0.5.1 FörsäkringstypTillval.Designer.cs">
+      <DependentUpon>0.5.1 FörsäkringstypTillval.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\0.5.2 Provisionsvärdetabell.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\0.5.2 Provisionsvärdetabell.Designer.cs">
+      <DependentUpon>0.5.2 Provisionsvärdetabell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\0.5.3 Semesterersättning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\0.5.3 Semesterersättning.Designer.cs">
+      <DependentUpon>0.5.3 Semesterersättning.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\0.7.1 Behörighet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\0.7.1 Behörighet.Designer.cs">
+      <DependentUpon>0.7.1 Behörighet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\0.7 Personal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\0.7 Personal.Designer.cs">
+      <DependentUpon>0.7 Personal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\0.8 Provision.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\0.8 Provision.Designer.cs">
+      <DependentUpon>0.8 Provision.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\0.1.1 InloggningsProfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\0.1.1 InloggningsProfil.Designer.cs">
+      <DependentUpon>0.1.1 InloggningsProfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\0.9 FörsäljningsStatistik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\0.9 FörsäljningsStatistik.Designer.cs">
+      <DependentUpon>0.9 FörsäljningsStatistik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\0.9 Trend.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\0.9 Trend.Designer.cs">
+      <DependentUpon>0.9 Trend.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\0.4 FörsäkringarVisaFöretag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\0.4 FörsäkringarVisaFöretag.Designer.cs">
+      <DependentUpon>0.4 FörsäkringarVisaFöretag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\0.4.2 FörsäkringsarVisaPrivat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\0.4.2 FörsäkringsarVisaPrivat.Designer.cs">
+      <DependentUpon>0.4.2 FörsäkringsarVisaPrivat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\0.7.1.1 Skapa Behörighet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\0.7.1.1 Skapa Behörighet.Designer.cs">
+      <DependentUpon>0.7.1.1 Skapa Behörighet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\0.7.1.2 RedigeraBehörighet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\0.7.1.2 RedigeraBehörighet.Designer.cs">
+      <DependentUpon>0.7.1.2 RedigeraBehörighet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\0.7.001 LäggTillPersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\0.7.001 LäggTillPersonal.Designer.cs">
+      <DependentUpon>0.7.001 LäggTillPersonal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\0.7.002 FormRedigeraPersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\0.7.002 FormRedigeraPersonal.Designer.cs">
+      <DependentUpon>0.7.002 FormRedigeraPersonal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\0.3.2.2.1 RedigeraFöretagsansökan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\0.3.2.2.1 RedigeraFöretagsansökan.Designer.cs">
+      <DependentUpon>0.3.2.2.1 RedigeraFöretagsansökan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\0.5.1.1 FormLäggTillGrundbelopp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\0.5.1.1 FormLäggTillGrundbelopp.Designer.cs">
+      <DependentUpon>0.5.1.1 FormLäggTillGrundbelopp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\0.5.1.1 FormLäggTillFörsäkringsTyp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\0.5.1.1 FormLäggTillFörsäkringsTyp.Designer.cs">
+      <DependentUpon>0.5.1.1 FormLäggTillFörsäkringsTyp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\0.5.1.01 FormLäggTillTillval.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\0.5.1.01 FormLäggTillTillval.Designer.cs">
+      <DependentUpon>0.5.1.01 FormLäggTillTillval.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\0.5.1.1 FormLäggTillTillvalsbelopp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\0.5.1.1 FormLäggTillTillvalsbelopp.Designer.cs">
+      <DependentUpon>0.5.1.1 FormLäggTillTillvalsbelopp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\0.5.2.1 FormSkapaProvisionstabell.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\0.5.2.1 FormSkapaProvisionstabell.Designer.cs">
+      <DependentUpon>0.5.2.1 FormSkapaProvisionstabell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\0.5.3.1 FormSkapaSemesterersättning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\0.5.3.1 FormSkapaSemesterersättning.Designer.cs">
+      <DependentUpon>0.5.3.1 FormSkapaSemesterersättning.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\0.3.2.2.2 FormSkapaFöretagsFörsäkring.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\0.3.2.2.2 FormSkapaFöretagsFörsäkring.Designer.cs">
+      <DependentUpon>0.3.2.2.2 FormSkapaFöretagsFörsäkring.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\0.3.2.1.2 FormSkapaPrivatFörsäkring.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\0.3.2.1.2 FormSkapaPrivatFörsäkring.Designer.cs">
+      <DependentUpon>0.3.2.1.2 FormSkapaPrivatFörsäkring.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\0.3.2.1.1 FormRedigeraPrivatAnsökan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\0.3.2.1.1 FormRedigeraPrivatAnsökan.Designer.cs">
+      <DependentUpon>0.3.2.1.1 FormRedigeraPrivatAnsökan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\0.4.1 FormRedigeraFöretagsFörsäkring.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\0.4.1 FormRedigeraFöretagsFörsäkring.Designer.cs">
+      <DependentUpon>0.4.1 FormRedigeraFöretagsFörsäkring.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\0.4.2.1 FormRedigeraPrivatFörsäkringar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\0.4.2.1 FormRedigeraPrivatFörsäkringar.Designer.cs">
+      <DependentUpon>0.4.2.1 FormRedigeraPrivatFörsäkringar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\0.2.1.1 FormRedigeraPrivatprofil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\0.2.1.1 FormRedigeraPrivatprofil.Designer.cs">
+      <DependentUpon>0.2.1.1 FormRedigeraPrivatprofil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\0.1.1.1 FormRedigeraInloggnignsprofil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\0.1.1.1 FormRedigeraInloggnignsprofil.Designer.cs">
+      <DependentUpon>0.1.1.1 FormRedigeraInloggnignsprofil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\0.2.0.1 FormRedigeraFöretagsprofil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\0.2.0.1 FormRedigeraFöretagsprofil.Designer.cs">
+      <DependentUpon>0.2.0.1 FormRedigeraFöretagsprofil.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Views\0.0 Login.resx">
+      <DependentUpon>0.0 Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\0.1 HuvudMeny.resx">
+      <DependentUpon>0.1 HuvudMeny.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\0.1.1 InloggningsProfil.resx">
+      <DependentUpon>0.1.1 InloggningsProfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\0.2.1 PrivatRegister.resx">
+      <DependentUpon>0.2.1 PrivatRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\0.2.1.1 FormRedigeraPrivatprofil.resx">
+      <DependentUpon>0.2.1.1 FormRedigeraPrivatprofil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\0.2 FöretagRegister.resx">
+      <DependentUpon>0.2 FöretagRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\0.2.0.1 FormRedigeraFöretagsprofil.resx">
+      <DependentUpon>0.2.0.1 FormRedigeraFöretagsprofil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\0.3.1.2 SkapaNyAnsökanFöretag.resx">
+      <DependentUpon>0.3.1.2 SkapaNyAnsökanFöretag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\0.3.1.1 SkapaNyAnsökanPrivat.resx">
+      <DependentUpon>0.3.1.1 SkapaNyAnsökanPrivat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\0.3.2.1.1 FormRedigeraPrivatAnsökan.resx">
+      <DependentUpon>0.3.2.1.1 FormRedigeraPrivatAnsökan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\0.3.2.1.2 FormSkapaPrivatFörsäkring.resx">
+      <DependentUpon>0.3.2.1.2 FormSkapaPrivatFörsäkring.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\0.3.2.2 AnsökningarVisaFöretag.resx">
+      <DependentUpon>0.3.2.2 AnsökningarVisaFöretag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\0.3.2.1 AnsökningarVisaPrivat.resx">
+      <DependentUpon>0.3.2.1 AnsökningarVisaPrivat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\0.4 FörsäkringarVisaFöretag.resx">
+      <DependentUpon>0.4 FörsäkringarVisaFöretag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\0.4.2 FörsäkringsarVisaPrivat.resx">
+      <DependentUpon>0.4.2 FörsäkringsarVisaPrivat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\0.4.2.1 FormRedigeraPrivatFörsäkringar.resx">
+      <DependentUpon>0.4.2.1 FormRedigeraPrivatFörsäkringar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\0.5.1 FörsäkringstypTillval.resx">
+      <DependentUpon>0.5.1 FörsäkringstypTillval.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\0.5.2 Provisionsvärdetabell.resx">
+      <DependentUpon>0.5.2 Provisionsvärdetabell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\0.5.2.1 FormSkapaProvisionstabell.resx">
+      <DependentUpon>0.5.2.1 FormSkapaProvisionstabell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\0.3.2.2.2 FormSkapaFöretagsFörsäkring.resx">
+      <DependentUpon>0.3.2.2.2 FormSkapaFöretagsFörsäkring.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\0.5.3 Semesterersättning.resx">
+      <DependentUpon>0.5.3 Semesterersättning.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\0.7.1 Behörighet.resx">
+      <DependentUpon>0.7.1 Behörighet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\0.7 Personal.resx">
+      <DependentUpon>0.7 Personal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\0.7.1.1 Skapa Behörighet.resx">
+      <DependentUpon>0.7.1.1 Skapa Behörighet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\0.8 Provision.resx">
+      <DependentUpon>0.8 Provision.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\0.9 FörsäljningsStatistik.resx">
+      <DependentUpon>0.9 FörsäljningsStatistik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\0.9 Trend.resx">
+      <DependentUpon>0.9 Trend.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\0.7.1.2 RedigeraBehörighet.resx">
+      <DependentUpon>0.7.1.2 RedigeraBehörighet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\0.7.001 LäggTillPersonal.resx">
+      <DependentUpon>0.7.001 LäggTillPersonal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\0.7.002 FormRedigeraPersonal.resx">
+      <DependentUpon>0.7.002 FormRedigeraPersonal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\0.3.2.2.1 RedigeraFöretagsansökan.resx">
+      <DependentUpon>0.3.2.2.1 RedigeraFöretagsansökan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\0.5.1.1 FormLäggTillGrundbelopp.resx">
+      <DependentUpon>0.5.1.1 FormLäggTillGrundbelopp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\0.5.1.1 FormLäggTillFörsäkringsTyp.resx">
+      <DependentUpon>0.5.1.1 FormLäggTillFörsäkringsTyp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\0.5.1.01 FormLäggTillTillval.resx">
+      <DependentUpon>0.5.1.01 FormLäggTillTillval.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\0.5.1.1 FormLäggTillTillvalsbelopp.resx">
+      <DependentUpon>0.5.1.1 FormLäggTillTillvalsbelopp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\0.5.3.1 FormSkapaSemesterersättning.resx">
+      <DependentUpon>0.5.3.1 FormSkapaSemesterersättning.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\0.4.1 FormRedigeraFöretagsFörsäkring.resx">
+      <DependentUpon>0.4.1 FormRedigeraFöretagsFörsäkring.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\0.1.1.1 FormRedigeraInloggnignsprofil.resx">
+      <DependentUpon>0.1.1.1 FormRedigeraInloggnignsprofil.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="..\DataLayer\App.config">
+      <Link>App.config</Link>
+    </None>
+    <None Include="DataSourceBehörighet.xsc">
+      <DependentUpon>DataSourceBehörighet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSourceBehörighet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSourceBehörighet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSourceBehörighet.xss">
+      <DependentUpon>DataSourceBehörighet.xsd</DependentUpon>
+    </None>
+    <None Include="DatasourceProvision.xsc">
+      <DependentUpon>DatasourceProvision.xsd</DependentUpon>
+    </None>
+    <None Include="DatasourceProvision.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatasourceProvision.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DatasourceProvision.xss">
+      <DependentUpon>DatasourceProvision.xsd</DependentUpon>
+    </None>
+    <None Include="FöretagsansökningFörsäkringstagareTabell.xsc">
+      <DependentUpon>FöretagsansökningFörsäkringstagareTabell.xsd</DependentUpon>
+    </None>
+    <None Include="FöretagsansökningFörsäkringstagareTabell.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FöretagsansökningFörsäkringstagareTabell.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FöretagsansökningFörsäkringstagareTabell.xss">
+      <DependentUpon>FöretagsansökningFörsäkringstagareTabell.xsd</DependentUpon>
+    </None>
+    <None Include="försäkringsTypTabell.xsc">
+      <DependentUpon>försäkringsTypTabell.xsd</DependentUpon>
+    </None>
+    <None Include="försäkringsTypTabell.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>försäkringsTypTabell.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="försäkringsTypTabell.xss">
+      <DependentUpon>försäkringsTypTabell.xsd</DependentUpon>
+    </None>
+    <None Include="försäkringsTypTabellSet.xsc">
+      <DependentUpon>försäkringsTypTabellSet.xsd</DependentUpon>
+    </None>
+    <None Include="försäkringsTypTabellSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>försäkringsTypTabellSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="försäkringsTypTabellSet.xss">
+      <DependentUpon>försäkringsTypTabellSet.xsd</DependentUpon>
+    </None>
+    <None Include="grundbeloppTabell.xsc">
+      <DependentUpon>grundbeloppTabell.xsd</DependentUpon>
+    </None>
+    <None Include="grundbeloppTabell.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>grundbeloppTabell.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="grundbeloppTabell.xss">
+      <DependentUpon>grundbeloppTabell.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="rollTabell.xsc">
+      <DependentUpon>rollTabell.xsd</DependentUpon>
+    </None>
+    <None Include="rollTabell.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>rollTabell.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="rollTabell.xss">
+      <DependentUpon>rollTabell.xsd</DependentUpon>
+    </None>
+    <None Include="suht1807DataSet1.xsc">
+      <DependentUpon>suht1807DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="suht1807DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>suht1807DataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="suht1807DataSet1.xss">
+      <DependentUpon>suht1807DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="tillValsBeloppTabell.xsc">
+      <DependentUpon>tillValsBeloppTabell.xsd</DependentUpon>
+    </None>
+    <None Include="tillValsBeloppTabell.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>tillValsBeloppTabell.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="tillValsBeloppTabell.xss">
+      <DependentUpon>tillValsBeloppTabell.xsd</DependentUpon>
+    </None>
+    <None Include="tillvalsTypTabell.xsc">
+      <DependentUpon>tillvalsTypTabell.xsd</DependentUpon>
+    </None>
+    <None Include="tillvalsTypTabell.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>tillvalsTypTabell.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="tillvalsTypTabell.xss">
+      <DependentUpon>tillvalsTypTabell.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLayer\BusinessLayer.csproj">
+      <Project>{b5886fb8-ef70-46d1-b01e-29c4fea27088}</Project>
+      <Name>BusinessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataLayer\DataLayer.csproj">
+      <Project>{8045c98e-5f1e-4c0d-8ba9-89ad9b86f231}</Project>
+      <Name>DataLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

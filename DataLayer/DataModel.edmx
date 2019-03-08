@@ -1,0 +1,1014 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DataModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="DataModelStoreContainer">
+    <EntitySet Name="FörsäkringSet" EntityType="DataModel.Store.FörsäkringSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PersonalSet" EntityType="DataModel.Store.PersonalSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FöretagsansökanSet" EntityType="DataModel.Store.FöretagsansökanSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PrivatansökanSet" EntityType="DataModel.Store.PrivatansökanSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FörsäkringstagarePrivatSet" EntityType="DataModel.Store.FörsäkringstagarePrivatSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FörsäkringstagareFöretagSet" EntityType="DataModel.Store.FörsäkringstagareFöretagSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RollSet" EntityType="DataModel.Store.RollSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BehörighetSet" EntityType="DataModel.Store.BehörighetSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TillvalSet" EntityType="DataModel.Store.TillvalSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TillvalGrundbeloppSet" EntityType="DataModel.Store.TillvalGrundbeloppSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProvisionstabellSet" EntityType="DataModel.Store.ProvisionstabellSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SemesterersättningSet" EntityType="DataModel.Store.SemesterersättningSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="GrundbeloppSet" EntityType="DataModel.Store.GrundbeloppSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FörsäkringsTypSet" EntityType="DataModel.Store.FörsäkringsTypSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FörsäkringFöretagSet" EntityType="DataModel.Store.FörsäkringFöretagSet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FörsäkringPrivatansökan" Association="DataModel.Store.FörsäkringPrivatansökan">
+      <End Role="Försäkring" EntitySet="FörsäkringSet" />
+      <End Role="Privatansökan" EntitySet="PrivatansökanSet" />
+    </AssociationSet>
+    <AssociationSet Name="FöretagsansökanFörsäkringstagareFöretag" Association="DataModel.Store.FöretagsansökanFörsäkringstagareFöretag">
+      <End Role="Företagsansökan" EntitySet="FöretagsansökanSet" />
+      <End Role="FörsäkringstagareFöretag" EntitySet="FörsäkringstagareFöretagSet" />
+    </AssociationSet>
+    <AssociationSet Name="PrivatansökanFörsäkringstagarePrivat" Association="DataModel.Store.PrivatansökanFörsäkringstagarePrivat">
+      <End Role="Privatansökan" EntitySet="PrivatansökanSet" />
+      <End Role="FörsäkringstagarePrivat" EntitySet="FörsäkringstagarePrivatSet" />
+    </AssociationSet>
+    <AssociationSet Name="PrivatansökanPersonal" Association="DataModel.Store.PrivatansökanPersonal">
+      <End Role="Privatansökan" EntitySet="PrivatansökanSet" />
+      <End Role="Personal" EntitySet="PersonalSet" />
+    </AssociationSet>
+    <AssociationSet Name="FöretagsansökanPersonal" Association="DataModel.Store.FöretagsansökanPersonal">
+      <End Role="Företagsansökan" EntitySet="FöretagsansökanSet" />
+      <End Role="Personal" EntitySet="PersonalSet" />
+    </AssociationSet>
+    <AssociationSet Name="PersonalRoll" Association="DataModel.Store.PersonalRoll">
+      <End Role="Personal" EntitySet="PersonalSet" />
+      <End Role="Roll" EntitySet="RollSet" />
+    </AssociationSet>
+    <AssociationSet Name="RollBehörighet" Association="DataModel.Store.RollBehörighet">
+      <End Role="Roll" EntitySet="RollSet" />
+      <End Role="Behörighet" EntitySet="BehörighetSet" />
+    </AssociationSet>
+    <AssociationSet Name="TillvalTillvalGrundbelopp" Association="DataModel.Store.TillvalTillvalGrundbelopp">
+      <End Role="Tillval" EntitySet="TillvalSet" />
+      <End Role="TillvalGrundbelopp" EntitySet="TillvalGrundbeloppSet" />
+    </AssociationSet>
+    <AssociationSet Name="GrundbeloppFörsäkringsTyp" Association="DataModel.Store.GrundbeloppFörsäkringsTyp">
+      <End Role="Grundbelopp" EntitySet="GrundbeloppSet" />
+      <End Role="FörsäkringsTyp" EntitySet="FörsäkringsTypSet" />
+    </AssociationSet>
+    <AssociationSet Name="FörsäkringsTypPrivatansökan" Association="DataModel.Store.FörsäkringsTypPrivatansökan">
+      <End Role="FörsäkringsTyp" EntitySet="FörsäkringsTypSet" />
+      <End Role="Privatansökan" EntitySet="PrivatansökanSet" />
+    </AssociationSet>
+    <AssociationSet Name="FörsäkringsTypTillval" Association="DataModel.Store.FörsäkringsTypTillval">
+      <End Role="FörsäkringsTyp" EntitySet="FörsäkringsTypSet" />
+      <End Role="Tillval" EntitySet="TillvalSet" />
+    </AssociationSet>
+    <AssociationSet Name="FöretagsansökanFörsäkringFöretag" Association="DataModel.Store.FöretagsansökanFörsäkringFöretag">
+      <End Role="Företagsansökan" EntitySet="FöretagsansökanSet" />
+      <End Role="FörsäkringFöretag" EntitySet="FörsäkringFöretagSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="FörsäkringSet">
+    <Key>
+      <PropertyRef Name="försäkringsId" />
+    </Key>
+    <Property Name="försäkringsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="försäkringsNr" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="betald" Type="datetime" Nullable="false" />
+    <Property Name="provisionsbelopp" Type="int" Nullable="true" />
+    <Property Name="Privatansökan_privatAnsökningsId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PersonalSet">
+    <Key>
+      <PropertyRef Name="anställningsId" />
+    </Key>
+    <Property Name="anställningsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="persNr" Type="bigint" Nullable="false" />
+    <Property Name="agenturNr" Type="int" Nullable="false" />
+    <Property Name="skattesats" Type="float" Nullable="false" />
+    <Property Name="fNamn" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="eNamn" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="gatuAdress" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ort" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="postNr" Type="int" Nullable="false" />
+    <Property Name="tel1" Type="int" Nullable="false" />
+    <Property Name="tel2" Type="int" Nullable="false" />
+    <Property Name="email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="lösenord" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Roll_rollId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FöretagsansökanSet">
+    <Key>
+      <PropertyRef Name="företagsAnsökningsId" />
+    </Key>
+    <Property Name="företagsAnsökningsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="försäkringsbolag" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="begynnelsedatum" Type="datetime" Nullable="false" />
+    <Property Name="förfallodag" Type="datetime" Nullable="false" />
+    <Property Name="betalningsform" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="premie" Type="int" Nullable="false" />
+    <Property Name="Anteckning" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="försäkringsTyp" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FörsäkringstagareFöretag_försäkringstagareFöretagId" Type="bigint" Nullable="false" />
+    <Property Name="Personal_anställningsId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PrivatansökanSet">
+    <Key>
+      <PropertyRef Name="privatAnsökningsId" />
+    </Key>
+    <Property Name="privatAnsökningsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="privatFörsäkradPersNr" Type="bigint" Nullable="false" />
+    <Property Name="privatFörsäkradENamn" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="privatFörsäkradFNamn" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ankomstdatum" Type="datetime" Nullable="false" />
+    <Property Name="betalningsform" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="vuxen" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="premie" Type="int" Nullable="false" />
+    <Property Name="paGatuadress" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="paOrt" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="paPostnr" Type="int" Nullable="false" />
+    <Property Name="tillvalsNamn" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="grundBelopp" Type="int" Nullable="false" />
+    <Property Name="tvGrundbelopp" Type="int" Nullable="true" />
+    <Property Name="försäkringsbolag" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FörsäkringstagarePrivat_försäkringstagarePrivatId" Type="bigint" Nullable="false" />
+    <Property Name="Personal_anställningsId" Type="int" Nullable="false" />
+    <Property Name="FörsäkringsTyp_försäkringsTypId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FörsäkringstagarePrivatSet">
+    <Key>
+      <PropertyRef Name="försäkringstagarePrivatId" />
+    </Key>
+    <Property Name="försäkringstagarePrivatId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fNamn" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="eNamn" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="gatuAdress" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ort" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="postNr" Type="int" Nullable="false" />
+    <Property Name="tel1" Type="int" Nullable="false" />
+    <Property Name="tel2" Type="int" Nullable="false" />
+    <Property Name="email1" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="email2" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="prospekt" Type="bit" Nullable="false" />
+    <Property Name="persNr" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FörsäkringstagareFöretagSet">
+    <Key>
+      <PropertyRef Name="försäkringstagareFöretagId" />
+    </Key>
+    <Property Name="försäkringstagareFöretagId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="företagsNamn" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="kFNamn" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="kENamn" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ort" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="postNr" Type="int" Nullable="false" />
+    <Property Name="tel1" Type="int" Nullable="false" />
+    <Property Name="faxNr" Type="int" Nullable="false" />
+    <Property Name="email1" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="gatuAdress" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="orgNr" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RollSet">
+    <Key>
+      <PropertyRef Name="rollId" />
+    </Key>
+    <Property Name="rollId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="rollNamn" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Behörighet_behörighetsId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BehörighetSet">
+    <Key>
+      <PropertyRef Name="behörighetsId" />
+    </Key>
+    <Property Name="behörighetsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="behörighetsTyp" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TillvalSet">
+    <Key>
+      <PropertyRef Name="tillvalsId" />
+    </Key>
+    <Property Name="tillvalsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="datum" Type="datetime" Nullable="false" />
+    <Property Name="ackVärdeVariabel" Type="float" Nullable="false" />
+    <Property Name="tillvalsNamn" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TillvalGrundbeloppSet">
+    <Key>
+      <PropertyRef Name="tvGrundbeloppId" />
+    </Key>
+    <Property Name="tvGrundbeloppId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="grundBelopp" Type="int" Nullable="false" />
+    <Property Name="Tillval_tillvalsId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProvisionstabellSet">
+    <Key>
+      <PropertyRef Name="provisionstabellsId" />
+    </Key>
+    <Property Name="provisionstabellsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="totaltMinAckVärde" Type="int" Nullable="false" />
+    <Property Name="totaltMaxAckVärde" Type="int" Nullable="false" />
+    <Property Name="provisionsAndelBarn" Type="float" Nullable="false" />
+    <Property Name="provionsAndelVuxen" Type="float" Nullable="false" />
+    <Property Name="period" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SemesterersättningSet">
+    <Key>
+      <PropertyRef Name="semesterersättningsId" />
+    </Key>
+    <Property Name="semesterersättningsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="år" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="avdrag" Type="float" Nullable="false" />
+    <Property Name="procentsats" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GrundbeloppSet">
+    <Key>
+      <PropertyRef Name="grundbeloppsId" />
+    </Key>
+    <Property Name="grundbeloppsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="datum" Type="datetime" Nullable="false" />
+    <Property Name="grundBelopp" Type="int" Nullable="false" />
+    <Property Name="ackVärde" Type="float" Nullable="false" />
+    <Property Name="FörsäkringsTyp_försäkringsTypId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FörsäkringsTypSet">
+    <Key>
+      <PropertyRef Name="försäkringsTypId" />
+    </Key>
+    <Property Name="försäkringsTypId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="försäkringsTyp" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Tillval_tillvalsId" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="FörsäkringFöretagSet">
+    <Key>
+      <PropertyRef Name="FöretagsförsäkringsId" />
+    </Key>
+    <Property Name="FöretagsförsäkringsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="försäkringsNr" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="betald" Type="datetime" Nullable="false" />
+    <Property Name="provisionsbelopp" Type="int" Nullable="false" />
+    <Property Name="Företagsansökan_företagsAnsökningsId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FörsäkringPrivatansökan">
+    <End Role="Försäkring" Type="DataModel.Store.FörsäkringSet" Multiplicity="*" />
+    <End Role="Privatansökan" Type="DataModel.Store.PrivatansökanSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Privatansökan">
+        <PropertyRef Name="privatAnsökningsId" />
+      </Principal>
+      <Dependent Role="Försäkring">
+        <PropertyRef Name="Privatansökan_privatAnsökningsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FöretagsansökanFörsäkringstagareFöretag">
+    <End Role="Företagsansökan" Type="DataModel.Store.FöretagsansökanSet" Multiplicity="*" />
+    <End Role="FörsäkringstagareFöretag" Type="DataModel.Store.FörsäkringstagareFöretagSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="FörsäkringstagareFöretag">
+        <PropertyRef Name="försäkringstagareFöretagId" />
+      </Principal>
+      <Dependent Role="Företagsansökan">
+        <PropertyRef Name="FörsäkringstagareFöretag_försäkringstagareFöretagId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PrivatansökanFörsäkringstagarePrivat">
+    <End Role="Privatansökan" Type="DataModel.Store.PrivatansökanSet" Multiplicity="*" />
+    <End Role="FörsäkringstagarePrivat" Type="DataModel.Store.FörsäkringstagarePrivatSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="FörsäkringstagarePrivat">
+        <PropertyRef Name="försäkringstagarePrivatId" />
+      </Principal>
+      <Dependent Role="Privatansökan">
+        <PropertyRef Name="FörsäkringstagarePrivat_försäkringstagarePrivatId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PrivatansökanPersonal">
+    <End Role="Privatansökan" Type="DataModel.Store.PrivatansökanSet" Multiplicity="*" />
+    <End Role="Personal" Type="DataModel.Store.PersonalSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Personal">
+        <PropertyRef Name="anställningsId" />
+      </Principal>
+      <Dependent Role="Privatansökan">
+        <PropertyRef Name="Personal_anställningsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FöretagsansökanPersonal">
+    <End Role="Företagsansökan" Type="DataModel.Store.FöretagsansökanSet" Multiplicity="*" />
+    <End Role="Personal" Type="DataModel.Store.PersonalSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Personal">
+        <PropertyRef Name="anställningsId" />
+      </Principal>
+      <Dependent Role="Företagsansökan">
+        <PropertyRef Name="Personal_anställningsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PersonalRoll">
+    <End Role="Personal" Type="DataModel.Store.PersonalSet" Multiplicity="*" />
+    <End Role="Roll" Type="DataModel.Store.RollSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Roll">
+        <PropertyRef Name="rollId" />
+      </Principal>
+      <Dependent Role="Personal">
+        <PropertyRef Name="Roll_rollId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RollBehörighet">
+    <End Role="Roll" Type="DataModel.Store.RollSet" Multiplicity="*" />
+    <End Role="Behörighet" Type="DataModel.Store.BehörighetSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Behörighet">
+        <PropertyRef Name="behörighetsId" />
+      </Principal>
+      <Dependent Role="Roll">
+        <PropertyRef Name="Behörighet_behörighetsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TillvalTillvalGrundbelopp">
+    <End Role="Tillval" Type="DataModel.Store.TillvalSet" Multiplicity="1" />
+    <End Role="TillvalGrundbelopp" Type="DataModel.Store.TillvalGrundbeloppSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tillval">
+        <PropertyRef Name="tillvalsId" />
+      </Principal>
+      <Dependent Role="TillvalGrundbelopp">
+        <PropertyRef Name="Tillval_tillvalsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="GrundbeloppFörsäkringsTyp">
+    <End Role="Grundbelopp" Type="DataModel.Store.GrundbeloppSet" Multiplicity="*" />
+    <End Role="FörsäkringsTyp" Type="DataModel.Store.FörsäkringsTypSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="FörsäkringsTyp">
+        <PropertyRef Name="försäkringsTypId" />
+      </Principal>
+      <Dependent Role="Grundbelopp">
+        <PropertyRef Name="FörsäkringsTyp_försäkringsTypId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FörsäkringsTypPrivatansökan">
+    <End Role="FörsäkringsTyp" Type="DataModel.Store.FörsäkringsTypSet" Multiplicity="1" />
+    <End Role="Privatansökan" Type="DataModel.Store.PrivatansökanSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FörsäkringsTyp">
+        <PropertyRef Name="försäkringsTypId" />
+      </Principal>
+      <Dependent Role="Privatansökan">
+        <PropertyRef Name="FörsäkringsTyp_försäkringsTypId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FörsäkringsTypTillval">
+    <End Role="FörsäkringsTyp" Type="DataModel.Store.FörsäkringsTypSet" Multiplicity="*" />
+    <End Role="Tillval" Type="DataModel.Store.TillvalSet" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Tillval">
+        <PropertyRef Name="tillvalsId" />
+      </Principal>
+      <Dependent Role="FörsäkringsTyp">
+        <PropertyRef Name="Tillval_tillvalsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FöretagsansökanFörsäkringFöretag">
+    <End Role="Företagsansökan" Type="DataModel.Store.FöretagsansökanSet" Multiplicity="1" />
+    <End Role="FörsäkringFöretag" Type="DataModel.Store.FörsäkringFöretagSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Företagsansökan">
+        <PropertyRef Name="företagsAnsökningsId" />
+      </Principal>
+      <Dependent Role="FörsäkringFöretag">
+        <PropertyRef Name="Företagsansökan_företagsAnsökningsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="DataModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="DataModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="FörsäkringSet" EntityType="DataModel.Försäkring" />
+          <EntitySet Name="PersonalSet" EntityType="DataModel.Personal" />
+          <EntitySet Name="FöretagsansökanSet" EntityType="DataModel.Företagsansökan" />
+          <EntitySet Name="PrivatansökanSet" EntityType="DataModel.Privatansökan" />
+          <EntitySet Name="FörsäkringstagarePrivatSet" EntityType="DataModel.FörsäkringstagarePrivat" />
+          <EntitySet Name="FörsäkringstagareFöretagSet" EntityType="DataModel.FörsäkringstagareFöretag" />
+          <EntitySet Name="RollSet" EntityType="DataModel.Roll" />
+          <EntitySet Name="BehörighetSet" EntityType="DataModel.Behörighet" />
+          <EntitySet Name="TillvalSet" EntityType="DataModel.Tillval" />
+          <EntitySet Name="TillvalGrundbeloppSet" EntityType="DataModel.TillvalGrundbelopp" />
+          <EntitySet Name="ProvisionstabellSet" EntityType="DataModel.Provisionstabell" />
+          <EntitySet Name="SemesterersättningSet" EntityType="DataModel.Semesterersättning" />
+          <EntitySet Name="GrundbeloppSet" EntityType="DataModel.Grundbelopp" />
+          <AssociationSet Name="FörsäkringPrivatansökan" Association="DataModel.FörsäkringPrivatansökan">
+            <End Role="Försäkring" EntitySet="FörsäkringSet" />
+            <End Role="Privatansökan" EntitySet="PrivatansökanSet" />
+          </AssociationSet>
+          <AssociationSet Name="FöretagsansökanFörsäkringstagareFöretag" Association="DataModel.FöretagsansökanFörsäkringstagareFöretag">
+            <End Role="Företagsansökan" EntitySet="FöretagsansökanSet" />
+            <End Role="FörsäkringstagareFöretag" EntitySet="FörsäkringstagareFöretagSet" />
+          </AssociationSet>
+          <AssociationSet Name="PrivatansökanFörsäkringstagarePrivat" Association="DataModel.PrivatansökanFörsäkringstagarePrivat">
+            <End Role="Privatansökan" EntitySet="PrivatansökanSet" />
+            <End Role="FörsäkringstagarePrivat" EntitySet="FörsäkringstagarePrivatSet" />
+          </AssociationSet>
+          <AssociationSet Name="PrivatansökanPersonal" Association="DataModel.PrivatansökanPersonal">
+            <End Role="Privatansökan" EntitySet="PrivatansökanSet" />
+            <End Role="Personal" EntitySet="PersonalSet" />
+          </AssociationSet>
+          <AssociationSet Name="FöretagsansökanPersonal" Association="DataModel.FöretagsansökanPersonal">
+            <End Role="Företagsansökan" EntitySet="FöretagsansökanSet" />
+            <End Role="Personal" EntitySet="PersonalSet" />
+          </AssociationSet>
+          <AssociationSet Name="PersonalRoll" Association="DataModel.PersonalRoll">
+            <End Role="Personal" EntitySet="PersonalSet" />
+            <End Role="Roll" EntitySet="RollSet" />
+          </AssociationSet>
+          <AssociationSet Name="RollBehörighet" Association="DataModel.RollBehörighet">
+            <End Role="Roll" EntitySet="RollSet" />
+            <End Role="Behörighet" EntitySet="BehörighetSet" />
+          </AssociationSet>
+          <AssociationSet Name="TillvalTillvalGrundbelopp" Association="DataModel.TillvalTillvalGrundbelopp">
+            <End Role="Tillval" EntitySet="TillvalSet" />
+            <End Role="TillvalGrundbelopp" EntitySet="TillvalGrundbeloppSet" />
+          </AssociationSet>
+          <EntitySet Name="FörsäkringsTypSet" EntityType="DataModel.FörsäkringsTyp" />
+          <AssociationSet Name="GrundbeloppFörsäkringsTyp" Association="DataModel.GrundbeloppFörsäkringsTyp">
+            <End Role="Grundbelopp" EntitySet="GrundbeloppSet" />
+            <End Role="FörsäkringsTyp" EntitySet="FörsäkringsTypSet" />
+          </AssociationSet>
+          <AssociationSet Name="FörsäkringsTypPrivatansökan" Association="DataModel.FörsäkringsTypPrivatansökan">
+            <End Role="FörsäkringsTyp" EntitySet="FörsäkringsTypSet" />
+            <End Role="Privatansökan" EntitySet="PrivatansökanSet" />
+          </AssociationSet>
+          <AssociationSet Name="FörsäkringsTypTillval" Association="DataModel.FörsäkringsTypTillval">
+            <End Role="FörsäkringsTyp" EntitySet="FörsäkringsTypSet" />
+            <End Role="Tillval" EntitySet="TillvalSet" />
+          </AssociationSet>
+          <EntitySet Name="FörsäkringFöretagSet" EntityType="DataModel.FörsäkringFöretag" />
+          <AssociationSet Name="FöretagsansökanFörsäkringFöretag" Association="DataModel.FöretagsansökanFörsäkringFöretag">
+            <End Role="Företagsansökan" EntitySet="FöretagsansökanSet" />
+            <End Role="FörsäkringFöretag" EntitySet="FörsäkringFöretagSet" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Försäkring">
+          <Key>
+            <PropertyRef Name="försäkringsId" />
+          </Key>
+          <Property Name="försäkringsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="försäkringsNr" Type="String" Nullable="false" />
+          <Property Name="betald" Type="DateTime" Nullable="false" />
+          <Property Name="provisionsbelopp" Type="Int32" Nullable="true" />
+          <NavigationProperty Name="Privatansökan" Relationship="DataModel.FörsäkringPrivatansökan" FromRole="Försäkring" ToRole="Privatansökan" />
+        </EntityType>
+        <EntityType Name="Personal">
+          <Key>
+            <PropertyRef Name="anställningsId" />
+          </Key>
+          <Property Name="anställningsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="persNr" Type="Int64" Nullable="false" />
+          <Property Name="agenturNr" Type="Int32" Nullable="false" />
+          <Property Name="skattesats" Type="Double" Nullable="false" />
+          <Property Name="fNamn" Type="String" Nullable="false" />
+          <Property Name="eNamn" Type="String" Nullable="false" />
+          <Property Name="gatuAdress" Type="String" Nullable="false" />
+          <Property Name="ort" Type="String" Nullable="false" />
+          <Property Name="postNr" Type="Int32" Nullable="false" />
+          <Property Name="tel1" Type="Int32" Nullable="false" />
+          <Property Name="tel2" Type="Int32" Nullable="false" />
+          <Property Name="email" Type="String" Nullable="false" />
+          <Property Name="lösenord" Type="String" Nullable="false" />
+          <NavigationProperty Name="Privatansökan" Relationship="DataModel.PrivatansökanPersonal" FromRole="Personal" ToRole="Privatansökan" />
+          <NavigationProperty Name="Företagsansökan" Relationship="DataModel.FöretagsansökanPersonal" FromRole="Personal" ToRole="Företagsansökan" />
+          <NavigationProperty Name="Roll" Relationship="DataModel.PersonalRoll" FromRole="Personal" ToRole="Roll" />
+        </EntityType>
+        <EntityType Name="Företagsansökan">
+          <Key>
+            <PropertyRef Name="företagsAnsökningsId" />
+          </Key>
+          <Property Name="företagsAnsökningsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="försäkringsbolag" Type="String" Nullable="false" />
+          <Property Name="begynnelsedatum" Type="DateTime" Nullable="false" />
+          <Property Name="förfallodag" Type="DateTime" Nullable="false" />
+          <Property Name="betalningsform" Type="String" Nullable="false" />
+          <Property Name="premie" Type="Int32" Nullable="false" />
+          <Property Name="Anteckning" Type="String" Nullable="false" />
+          <NavigationProperty Name="FörsäkringstagareFöretag" Relationship="DataModel.FöretagsansökanFörsäkringstagareFöretag" FromRole="Företagsansökan" ToRole="FörsäkringstagareFöretag" />
+          <NavigationProperty Name="Personal" Relationship="DataModel.FöretagsansökanPersonal" FromRole="Företagsansökan" ToRole="Personal" />
+          <Property Name="försäkringsTyp" Type="String" Nullable="false" />
+          <NavigationProperty Name="FörsäkringFöretag" Relationship="DataModel.FöretagsansökanFörsäkringFöretag" FromRole="Företagsansökan" ToRole="FörsäkringFöretag" />
+        </EntityType>
+        <EntityType Name="Privatansökan">
+          <Key>
+            <PropertyRef Name="privatAnsökningsId" />
+          </Key>
+          <Property Name="privatAnsökningsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="privatFörsäkradPersNr" Type="Int64" Nullable="false" />
+          <Property Name="privatFörsäkradENamn" Type="String" Nullable="false" />
+          <Property Name="privatFörsäkradFNamn" Type="String" Nullable="false" />
+          <Property Name="ankomstdatum" Type="DateTime" Nullable="false" />
+          <Property Name="betalningsform" Type="String" Nullable="false" />
+          <Property Name="vuxen" Type="String" Nullable="false" />
+          <Property Name="premie" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Försäkring" Relationship="DataModel.FörsäkringPrivatansökan" FromRole="Privatansökan" ToRole="Försäkring" />
+          <NavigationProperty Name="FörsäkringstagarePrivat" Relationship="DataModel.PrivatansökanFörsäkringstagarePrivat" FromRole="Privatansökan" ToRole="FörsäkringstagarePrivat" />
+          <NavigationProperty Name="Personal" Relationship="DataModel.PrivatansökanPersonal" FromRole="Privatansökan" ToRole="Personal" />
+          <Property Name="paGatuadress" Type="String" Nullable="false" />
+          <Property Name="paOrt" Type="String" Nullable="false" />
+          <Property Name="paPostnr" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="FörsäkringsTyp" Relationship="DataModel.FörsäkringsTypPrivatansökan" FromRole="Privatansökan" ToRole="FörsäkringsTyp" />
+          <Property Name="tillvalsNamn" Type="String" Nullable="true" />
+          <Property Name="grundBelopp" Type="Int32" Nullable="false" />
+          <Property Name="tvGrundbelopp" Type="Int32" Nullable="true" />
+          <Property Name="försäkringsbolag" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FörsäkringstagarePrivat">
+          <Key>
+            <PropertyRef Name="försäkringstagarePrivatId" />
+          </Key>
+          <Property Name="försäkringstagarePrivatId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fNamn" Type="String" Nullable="false" />
+          <Property Name="eNamn" Type="String" Nullable="false" />
+          <Property Name="gatuAdress" Type="String" Nullable="false" />
+          <Property Name="ort" Type="String" Nullable="false" />
+          <Property Name="postNr" Type="Int32" Nullable="false" />
+          <Property Name="tel1" Type="Int32" Nullable="false" />
+          <Property Name="tel2" Type="Int32" Nullable="false" />
+          <Property Name="email1" Type="String" Nullable="false" />
+          <Property Name="email2" Type="String" Nullable="false" />
+          <Property Name="prospekt" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Privatansökan" Relationship="DataModel.PrivatansökanFörsäkringstagarePrivat" FromRole="FörsäkringstagarePrivat" ToRole="Privatansökan" />
+          <Property Name="persNr" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FörsäkringstagareFöretag">
+          <Key>
+            <PropertyRef Name="försäkringstagareFöretagId" />
+          </Key>
+          <Property Name="försäkringstagareFöretagId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="företagsNamn" Type="String" Nullable="false" />
+          <Property Name="kFNamn" Type="String" Nullable="false" />
+          <Property Name="kENamn" Type="String" Nullable="false" />
+          <Property Name="ort" Type="String" Nullable="false" />
+          <Property Name="postNr" Type="Int32" Nullable="false" />
+          <Property Name="tel1" Type="Int32" Nullable="false" />
+          <Property Name="faxNr" Type="Int32" Nullable="false" />
+          <Property Name="email1" Type="String" Nullable="false" />
+          <NavigationProperty Name="Företagsansökan" Relationship="DataModel.FöretagsansökanFörsäkringstagareFöretag" FromRole="FörsäkringstagareFöretag" ToRole="Företagsansökan" />
+          <Property Name="gatuAdress" Type="String" Nullable="false" />
+          <Property Name="orgNr" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Roll">
+          <Key>
+            <PropertyRef Name="rollId" />
+          </Key>
+          <Property Name="rollId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="rollNamn" Type="String" Nullable="false" />
+          <NavigationProperty Name="Personal" Relationship="DataModel.PersonalRoll" FromRole="Roll" ToRole="Personal" />
+          <NavigationProperty Name="Behörighet" Relationship="DataModel.RollBehörighet" FromRole="Roll" ToRole="Behörighet" />
+        </EntityType>
+        <EntityType Name="Behörighet">
+          <Key>
+            <PropertyRef Name="behörighetsId" />
+          </Key>
+          <Property Name="behörighetsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="behörighetsTyp" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Roll" Relationship="DataModel.RollBehörighet" FromRole="Behörighet" ToRole="Roll" />
+        </EntityType>
+        <EntityType Name="Tillval">
+          <Key>
+            <PropertyRef Name="tillvalsId" />
+          </Key>
+          <Property Name="tillvalsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="datum" Type="DateTime" Nullable="false" />
+          <Property Name="ackVärdeVariabel" Type="Double" Nullable="false" />
+          <NavigationProperty Name="TillvalGrundbelopp" Relationship="DataModel.TillvalTillvalGrundbelopp" FromRole="Tillval" ToRole="TillvalGrundbelopp" />
+          <Property Name="tillvalsNamn" Type="String" Nullable="false" />
+          <NavigationProperty Name="FörsäkringsTyp" Relationship="DataModel.FörsäkringsTypTillval" FromRole="Tillval" ToRole="FörsäkringsTyp" />
+        </EntityType>
+        <EntityType Name="TillvalGrundbelopp">
+          <Key>
+            <PropertyRef Name="tvGrundbeloppId" />
+          </Key>
+          <Property Name="tvGrundbeloppId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="grundBelopp" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Tillval" Relationship="DataModel.TillvalTillvalGrundbelopp" FromRole="TillvalGrundbelopp" ToRole="Tillval" />
+        </EntityType>
+        <EntityType Name="Provisionstabell">
+          <Key>
+            <PropertyRef Name="provisionstabellsId" />
+          </Key>
+          <Property Name="provisionstabellsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="totaltMinAckVärde" Type="Int32" Nullable="false" />
+          <Property Name="totaltMaxAckVärde" Type="Int32" Nullable="false" />
+          <Property Name="provisionsAndelBarn" Type="Double" Nullable="false" />
+          <Property Name="provionsAndelVuxen" Type="Double" Nullable="false" />
+          <Property Name="period" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Semesterersättning">
+          <Key>
+            <PropertyRef Name="semesterersättningsId" />
+          </Key>
+          <Property Name="semesterersättningsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="år" Type="String" Nullable="false" />
+          <Property Name="avdrag" Type="Double" Nullable="false" />
+          <Property Name="procentsats" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Grundbelopp">
+          <Key>
+            <PropertyRef Name="grundbeloppsId" />
+          </Key>
+          <Property Name="grundbeloppsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="datum" Type="DateTime" Nullable="false" />
+          <Property Name="grundBelopp" Type="Int32" Nullable="false" />
+          <Property Name="ackVärde" Type="Double" Nullable="false" />
+          <NavigationProperty Name="FörsäkringsTyp" Relationship="DataModel.GrundbeloppFörsäkringsTyp" FromRole="Grundbelopp" ToRole="FörsäkringsTyp" />
+        </EntityType>
+        <Association Name="FörsäkringPrivatansökan">
+          <End Type="DataModel.Försäkring" Role="Försäkring" Multiplicity="*" />
+          <End Type="DataModel.Privatansökan" Role="Privatansökan" Multiplicity="1" />
+        </Association>
+        <Association Name="FöretagsansökanFörsäkringstagareFöretag">
+          <End Type="DataModel.Företagsansökan" Role="Företagsansökan" Multiplicity="*" />
+          <End Type="DataModel.FörsäkringstagareFöretag" Role="FörsäkringstagareFöretag" Multiplicity="1" />
+        </Association>
+        <Association Name="PrivatansökanFörsäkringstagarePrivat">
+          <End Type="DataModel.Privatansökan" Role="Privatansökan" Multiplicity="*" />
+          <End Type="DataModel.FörsäkringstagarePrivat" Role="FörsäkringstagarePrivat" Multiplicity="1" />
+        </Association>
+        <Association Name="PrivatansökanPersonal">
+          <End Type="DataModel.Privatansökan" Role="Privatansökan" Multiplicity="*" />
+          <End Type="DataModel.Personal" Role="Personal" Multiplicity="1" />
+        </Association>
+        <Association Name="FöretagsansökanPersonal">
+          <End Type="DataModel.Företagsansökan" Role="Företagsansökan" Multiplicity="*" />
+          <End Type="DataModel.Personal" Role="Personal" Multiplicity="1" />
+        </Association>
+        <Association Name="PersonalRoll">
+          <End Type="DataModel.Personal" Role="Personal" Multiplicity="*" />
+          <End Type="DataModel.Roll" Role="Roll" Multiplicity="1" />
+        </Association>
+        <Association Name="RollBehörighet">
+          <End Type="DataModel.Roll" Role="Roll" Multiplicity="*" />
+          <End Type="DataModel.Behörighet" Role="Behörighet" Multiplicity="1" />
+        </Association>
+        <Association Name="TillvalTillvalGrundbelopp">
+          <End Type="DataModel.Tillval" Role="Tillval" Multiplicity="1" />
+          <End Type="DataModel.TillvalGrundbelopp" Role="TillvalGrundbelopp" Multiplicity="*" />
+        </Association>
+        <EntityType Name="FörsäkringsTyp">
+          <Key>
+            <PropertyRef Name="försäkringsTypId" />
+          </Key>
+          <Property Name="försäkringsTypId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="försäkringsTyp" Type="String" Nullable="false" />
+          <NavigationProperty Name="Grundbelopp" Relationship="DataModel.GrundbeloppFörsäkringsTyp" FromRole="FörsäkringsTyp" ToRole="Grundbelopp" />
+          <NavigationProperty Name="Privatansökan" Relationship="DataModel.FörsäkringsTypPrivatansökan" FromRole="FörsäkringsTyp" ToRole="Privatansökan" />
+          <NavigationProperty Name="Tillval" Relationship="DataModel.FörsäkringsTypTillval" FromRole="FörsäkringsTyp" ToRole="Tillval" />
+        </EntityType>
+        <Association Name="GrundbeloppFörsäkringsTyp">
+          <End Type="DataModel.Grundbelopp" Role="Grundbelopp" Multiplicity="*" />
+          <End Type="DataModel.FörsäkringsTyp" Role="FörsäkringsTyp" Multiplicity="1" />
+        </Association>
+        <Association Name="FörsäkringsTypPrivatansökan">
+          <End Type="DataModel.FörsäkringsTyp" Role="FörsäkringsTyp" Multiplicity="1" />
+          <End Type="DataModel.Privatansökan" Role="Privatansökan" Multiplicity="*" />
+        </Association>
+        <Association Name="FörsäkringsTypTillval">
+          <End Type="DataModel.FörsäkringsTyp" Role="FörsäkringsTyp" Multiplicity="*" />
+          <End Type="DataModel.Tillval" Role="Tillval" Multiplicity="0..1" />
+        </Association>
+        <EntityType Name="FörsäkringFöretag">
+          <Key>
+            <PropertyRef Name="FöretagsförsäkringsId" />
+          </Key>
+          <Property Name="FöretagsförsäkringsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="försäkringsNr" Type="String" Nullable="false" />
+          <Property Name="betald" Type="DateTime" Nullable="false" />
+          <Property Name="provisionsbelopp" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Företagsansökan" Relationship="DataModel.FöretagsansökanFörsäkringFöretag" FromRole="FörsäkringFöretag" ToRole="Företagsansökan" />
+        </EntityType>
+        <Association Name="FöretagsansökanFörsäkringFöretag">
+          <End Type="DataModel.Företagsansökan" Role="Företagsansökan" Multiplicity="1" />
+          <End Type="DataModel.FörsäkringFöretag" Role="FörsäkringFöretag" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DataModelStoreContainer" CdmEntityContainer="DataModelContainer">
+    <EntitySetMapping Name="FörsäkringSet">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.Försäkring)">
+        <MappingFragment StoreEntitySet="FörsäkringSet">
+          <ScalarProperty Name="försäkringsId" ColumnName="försäkringsId" />
+          <ScalarProperty Name="försäkringsNr" ColumnName="försäkringsNr" />
+          <ScalarProperty Name="betald" ColumnName="betald" />
+          <ScalarProperty Name="provisionsbelopp" ColumnName="provisionsbelopp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PersonalSet">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.Personal)">
+        <MappingFragment StoreEntitySet="PersonalSet">
+          <ScalarProperty Name="anställningsId" ColumnName="anställningsId" />
+          <ScalarProperty Name="persNr" ColumnName="persNr" />
+          <ScalarProperty Name="agenturNr" ColumnName="agenturNr" />
+          <ScalarProperty Name="skattesats" ColumnName="skattesats" />
+          <ScalarProperty Name="fNamn" ColumnName="fNamn" />
+          <ScalarProperty Name="eNamn" ColumnName="eNamn" />
+          <ScalarProperty Name="gatuAdress" ColumnName="gatuAdress" />
+          <ScalarProperty Name="ort" ColumnName="ort" />
+          <ScalarProperty Name="postNr" ColumnName="postNr" />
+          <ScalarProperty Name="tel1" ColumnName="tel1" />
+          <ScalarProperty Name="tel2" ColumnName="tel2" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="lösenord" ColumnName="lösenord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FöretagsansökanSet">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.Företagsansökan)">
+        <MappingFragment StoreEntitySet="FöretagsansökanSet">
+          <ScalarProperty Name="företagsAnsökningsId" ColumnName="företagsAnsökningsId" />
+          <ScalarProperty Name="försäkringsbolag" ColumnName="försäkringsbolag" />
+          <ScalarProperty Name="begynnelsedatum" ColumnName="begynnelsedatum" />
+          <ScalarProperty Name="förfallodag" ColumnName="förfallodag" />
+          <ScalarProperty Name="betalningsform" ColumnName="betalningsform" />
+          <ScalarProperty Name="premie" ColumnName="premie" />
+          <ScalarProperty Name="Anteckning" ColumnName="Anteckning" />
+          <ScalarProperty Name="försäkringsTyp" ColumnName="försäkringsTyp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PrivatansökanSet">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.Privatansökan)">
+        <MappingFragment StoreEntitySet="PrivatansökanSet">
+          <ScalarProperty Name="privatAnsökningsId" ColumnName="privatAnsökningsId" />
+          <ScalarProperty Name="privatFörsäkradPersNr" ColumnName="privatFörsäkradPersNr" />
+          <ScalarProperty Name="privatFörsäkradENamn" ColumnName="privatFörsäkradENamn" />
+          <ScalarProperty Name="privatFörsäkradFNamn" ColumnName="privatFörsäkradFNamn" />
+          <ScalarProperty Name="ankomstdatum" ColumnName="ankomstdatum" />
+          <ScalarProperty Name="betalningsform" ColumnName="betalningsform" />
+          <ScalarProperty Name="vuxen" ColumnName="vuxen" />
+          <ScalarProperty Name="premie" ColumnName="premie" />
+          <ScalarProperty Name="paGatuadress" ColumnName="paGatuadress" />
+          <ScalarProperty Name="paOrt" ColumnName="paOrt" />
+          <ScalarProperty Name="paPostnr" ColumnName="paPostnr" />
+          <ScalarProperty Name="tillvalsNamn" ColumnName="tillvalsNamn" />
+          <ScalarProperty Name="grundBelopp" ColumnName="grundBelopp" />
+          <ScalarProperty Name="tvGrundbelopp" ColumnName="tvGrundbelopp" />
+          <ScalarProperty Name="försäkringsbolag" ColumnName="försäkringsbolag" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FörsäkringstagarePrivatSet">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.FörsäkringstagarePrivat)">
+        <MappingFragment StoreEntitySet="FörsäkringstagarePrivatSet">
+          <ScalarProperty Name="försäkringstagarePrivatId" ColumnName="försäkringstagarePrivatId" />
+          <ScalarProperty Name="fNamn" ColumnName="fNamn" />
+          <ScalarProperty Name="eNamn" ColumnName="eNamn" />
+          <ScalarProperty Name="gatuAdress" ColumnName="gatuAdress" />
+          <ScalarProperty Name="ort" ColumnName="ort" />
+          <ScalarProperty Name="postNr" ColumnName="postNr" />
+          <ScalarProperty Name="tel1" ColumnName="tel1" />
+          <ScalarProperty Name="tel2" ColumnName="tel2" />
+          <ScalarProperty Name="email1" ColumnName="email1" />
+          <ScalarProperty Name="email2" ColumnName="email2" />
+          <ScalarProperty Name="prospekt" ColumnName="prospekt" />
+          <ScalarProperty Name="persNr" ColumnName="persNr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FörsäkringstagareFöretagSet">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.FörsäkringstagareFöretag)">
+        <MappingFragment StoreEntitySet="FörsäkringstagareFöretagSet">
+          <ScalarProperty Name="försäkringstagareFöretagId" ColumnName="försäkringstagareFöretagId" />
+          <ScalarProperty Name="företagsNamn" ColumnName="företagsNamn" />
+          <ScalarProperty Name="kFNamn" ColumnName="kFNamn" />
+          <ScalarProperty Name="kENamn" ColumnName="kENamn" />
+          <ScalarProperty Name="ort" ColumnName="ort" />
+          <ScalarProperty Name="postNr" ColumnName="postNr" />
+          <ScalarProperty Name="tel1" ColumnName="tel1" />
+          <ScalarProperty Name="faxNr" ColumnName="faxNr" />
+          <ScalarProperty Name="email1" ColumnName="email1" />
+          <ScalarProperty Name="gatuAdress" ColumnName="gatuAdress" />
+          <ScalarProperty Name="orgNr" ColumnName="orgNr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RollSet">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.Roll)">
+        <MappingFragment StoreEntitySet="RollSet">
+          <ScalarProperty Name="rollId" ColumnName="rollId" />
+          <ScalarProperty Name="rollNamn" ColumnName="rollNamn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BehörighetSet">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.Behörighet)">
+        <MappingFragment StoreEntitySet="BehörighetSet">
+          <ScalarProperty Name="behörighetsId" ColumnName="behörighetsId" />
+          <ScalarProperty Name="behörighetsTyp" ColumnName="behörighetsTyp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TillvalSet">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.Tillval)">
+        <MappingFragment StoreEntitySet="TillvalSet">
+          <ScalarProperty Name="tillvalsId" ColumnName="tillvalsId" />
+          <ScalarProperty Name="datum" ColumnName="datum" />
+          <ScalarProperty Name="ackVärdeVariabel" ColumnName="ackVärdeVariabel" />
+          <ScalarProperty Name="tillvalsNamn" ColumnName="tillvalsNamn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TillvalGrundbeloppSet">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.TillvalGrundbelopp)">
+        <MappingFragment StoreEntitySet="TillvalGrundbeloppSet">
+          <ScalarProperty Name="tvGrundbeloppId" ColumnName="tvGrundbeloppId" />
+          <ScalarProperty Name="grundBelopp" ColumnName="grundBelopp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProvisionstabellSet">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.Provisionstabell)">
+        <MappingFragment StoreEntitySet="ProvisionstabellSet">
+          <ScalarProperty Name="provisionstabellsId" ColumnName="provisionstabellsId" />
+          <ScalarProperty Name="totaltMinAckVärde" ColumnName="totaltMinAckVärde" />
+          <ScalarProperty Name="totaltMaxAckVärde" ColumnName="totaltMaxAckVärde" />
+          <ScalarProperty Name="provisionsAndelBarn" ColumnName="provisionsAndelBarn" />
+          <ScalarProperty Name="provionsAndelVuxen" ColumnName="provionsAndelVuxen" />
+          <ScalarProperty Name="period" ColumnName="period" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SemesterersättningSet">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.Semesterersättning)">
+        <MappingFragment StoreEntitySet="SemesterersättningSet">
+          <ScalarProperty Name="semesterersättningsId" ColumnName="semesterersättningsId" />
+          <ScalarProperty Name="år" ColumnName="år" />
+          <ScalarProperty Name="avdrag" ColumnName="avdrag" />
+          <ScalarProperty Name="procentsats" ColumnName="procentsats" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GrundbeloppSet">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.Grundbelopp)">
+        <MappingFragment StoreEntitySet="GrundbeloppSet">
+          <ScalarProperty Name="grundbeloppsId" ColumnName="grundbeloppsId" />
+          <ScalarProperty Name="datum" ColumnName="datum" />
+          <ScalarProperty Name="grundBelopp" ColumnName="grundBelopp" />
+          <ScalarProperty Name="ackVärde" ColumnName="ackVärde" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FörsäkringsTypSet">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.FörsäkringsTyp)">
+        <MappingFragment StoreEntitySet="FörsäkringsTypSet">
+          <ScalarProperty Name="försäkringsTypId" ColumnName="försäkringsTypId" />
+          <ScalarProperty Name="försäkringsTyp" ColumnName="försäkringsTyp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FörsäkringFöretagSet">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.FörsäkringFöretag)">
+        <MappingFragment StoreEntitySet="FörsäkringFöretagSet">
+          <ScalarProperty Name="FöretagsförsäkringsId" ColumnName="FöretagsförsäkringsId" />
+          <ScalarProperty Name="försäkringsNr" ColumnName="försäkringsNr" />
+          <ScalarProperty Name="betald" ColumnName="betald" />
+          <ScalarProperty Name="provisionsbelopp" ColumnName="provisionsbelopp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FörsäkringPrivatansökan" TypeName="DataModel.FörsäkringPrivatansökan" StoreEntitySet="FörsäkringSet">
+      <EndProperty Name="Privatansökan">
+        <ScalarProperty Name="privatAnsökningsId" ColumnName="Privatansökan_privatAnsökningsId" />
+      </EndProperty>
+      <EndProperty Name="Försäkring">
+        <ScalarProperty Name="försäkringsId" ColumnName="försäkringsId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FöretagsansökanFörsäkringstagareFöretag" TypeName="DataModel.FöretagsansökanFörsäkringstagareFöretag" StoreEntitySet="FöretagsansökanSet">
+      <EndProperty Name="FörsäkringstagareFöretag">
+        <ScalarProperty Name="försäkringstagareFöretagId" ColumnName="FörsäkringstagareFöretag_försäkringstagareFöretagId" />
+      </EndProperty>
+      <EndProperty Name="Företagsansökan">
+        <ScalarProperty Name="företagsAnsökningsId" ColumnName="företagsAnsökningsId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PrivatansökanFörsäkringstagarePrivat" TypeName="DataModel.PrivatansökanFörsäkringstagarePrivat" StoreEntitySet="PrivatansökanSet">
+      <EndProperty Name="FörsäkringstagarePrivat">
+        <ScalarProperty Name="försäkringstagarePrivatId" ColumnName="FörsäkringstagarePrivat_försäkringstagarePrivatId" />
+      </EndProperty>
+      <EndProperty Name="Privatansökan">
+        <ScalarProperty Name="privatAnsökningsId" ColumnName="privatAnsökningsId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PrivatansökanPersonal" TypeName="DataModel.PrivatansökanPersonal" StoreEntitySet="PrivatansökanSet">
+      <EndProperty Name="Personal">
+        <ScalarProperty Name="anställningsId" ColumnName="Personal_anställningsId" />
+      </EndProperty>
+      <EndProperty Name="Privatansökan">
+        <ScalarProperty Name="privatAnsökningsId" ColumnName="privatAnsökningsId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FöretagsansökanPersonal" TypeName="DataModel.FöretagsansökanPersonal" StoreEntitySet="FöretagsansökanSet">
+      <EndProperty Name="Personal">
+        <ScalarProperty Name="anställningsId" ColumnName="Personal_anställningsId" />
+      </EndProperty>
+      <EndProperty Name="Företagsansökan">
+        <ScalarProperty Name="företagsAnsökningsId" ColumnName="företagsAnsökningsId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PersonalRoll" TypeName="DataModel.PersonalRoll" StoreEntitySet="PersonalSet">
+      <EndProperty Name="Roll">
+        <ScalarProperty Name="rollId" ColumnName="Roll_rollId" />
+      </EndProperty>
+      <EndProperty Name="Personal">
+        <ScalarProperty Name="anställningsId" ColumnName="anställningsId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="RollBehörighet" TypeName="DataModel.RollBehörighet" StoreEntitySet="RollSet">
+      <EndProperty Name="Behörighet">
+        <ScalarProperty Name="behörighetsId" ColumnName="Behörighet_behörighetsId" />
+      </EndProperty>
+      <EndProperty Name="Roll">
+        <ScalarProperty Name="rollId" ColumnName="rollId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TillvalTillvalGrundbelopp" TypeName="DataModel.TillvalTillvalGrundbelopp" StoreEntitySet="TillvalGrundbeloppSet">
+      <EndProperty Name="Tillval">
+        <ScalarProperty Name="tillvalsId" ColumnName="Tillval_tillvalsId" />
+      </EndProperty>
+      <EndProperty Name="TillvalGrundbelopp">
+        <ScalarProperty Name="tvGrundbeloppId" ColumnName="tvGrundbeloppId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="GrundbeloppFörsäkringsTyp" TypeName="DataModel.GrundbeloppFörsäkringsTyp" StoreEntitySet="GrundbeloppSet">
+      <EndProperty Name="FörsäkringsTyp">
+        <ScalarProperty Name="försäkringsTypId" ColumnName="FörsäkringsTyp_försäkringsTypId" />
+      </EndProperty>
+      <EndProperty Name="Grundbelopp">
+        <ScalarProperty Name="grundbeloppsId" ColumnName="grundbeloppsId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FörsäkringsTypPrivatansökan" TypeName="DataModel.FörsäkringsTypPrivatansökan" StoreEntitySet="PrivatansökanSet">
+      <EndProperty Name="FörsäkringsTyp">
+        <ScalarProperty Name="försäkringsTypId" ColumnName="FörsäkringsTyp_försäkringsTypId" />
+      </EndProperty>
+      <EndProperty Name="Privatansökan">
+        <ScalarProperty Name="privatAnsökningsId" ColumnName="privatAnsökningsId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FörsäkringsTypTillval" TypeName="DataModel.FörsäkringsTypTillval" StoreEntitySet="FörsäkringsTypSet">
+      <EndProperty Name="Tillval">
+        <ScalarProperty Name="tillvalsId" ColumnName="Tillval_tillvalsId" />
+      </EndProperty>
+      <EndProperty Name="FörsäkringsTyp">
+        <ScalarProperty Name="försäkringsTypId" ColumnName="försäkringsTypId" />
+      </EndProperty>
+      <Condition ColumnName="Tillval_tillvalsId" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FöretagsansökanFörsäkringFöretag" TypeName="DataModel.FöretagsansökanFörsäkringFöretag" StoreEntitySet="FörsäkringFöretagSet">
+      <EndProperty Name="Företagsansökan">
+        <ScalarProperty Name="företagsAnsökningsId" ColumnName="Företagsansökan_företagsAnsökningsId" />
+      </EndProperty>
+      <EndProperty Name="FörsäkringFöretag">
+        <ScalarProperty Name="FöretagsförsäkringsId" ColumnName="FöretagsförsäkringsId" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
